@@ -2,7 +2,7 @@
 .card-view {
   display: flex;
   flex-flow: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .list-view {
@@ -73,9 +73,15 @@
   font-weight: 700;
 }
 
+.thumbnail-container {
+  max-height: 200px;
+  align-self: center;
+}
+
 .thumbnail {
   margin-bottom: 8px;
-  max-height: 250px;
+  height: 100%;
+  width: auto;
 }
 
 .item-author,
@@ -115,7 +121,7 @@
 /* Desktop Styles */
 @media only screen and (min-width: 1200px) {
   .card-item {
-    flex: 0 0 20%;
+    flex: 0 0 23%;
   }
 
   .filter-container {
@@ -135,12 +141,6 @@
 
   .select-input {
     width: unset;
-  }
-
-  .thumbnail {
-    width: 200px;
-    height: auto;
-    margin: 0 auto;
   }
 }
 

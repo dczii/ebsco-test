@@ -3,12 +3,12 @@
     attach: function (context, settings) {
       $(".search-input").keypress(function (e) {
         if (e.which == 13) {
-          $("#search-button").unbind().click();
+          $("#search-button").once("books").click();
         }
       });
 
       $("#search-button")
-        .unbind()
+        .once("books")
         .click(function () {
           $('<div class="loader"></div>').appendTo("#container");
           $(".card-item").remove();
@@ -43,9 +43,9 @@
                 '<div class="card-item" id=' +
                   item.id +
                   ">" +
-                  '<img alt="book-cover" class="thumbnail" src="' +
+                  '<div class="thumbnail-container"><img alt="book-cover" class="thumbnail" src="' +
                   item.volumeInfo.imageLinks.thumbnail +
-                  '">' +
+                  '"></div>' +
                   '<div class="item-title" aria-labelledby="title"><span class="text-bold" id="title">Title: </span>' +
                   item.volumeInfo.title +
                   "</div>" +
